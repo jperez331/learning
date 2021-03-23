@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Muli&display=swap" rel="stylesheet">
+    <title>My Platzi Video</title>
+</head>
+<style>
+    body {
+        background-image: linear-gradient(to right, #00bdaa 20%, #400082 80%);
+        margin: 0%;
+        font-family: 'Mali', sans-serif;
+    }
+    .header {
+        width: 100%;
+        height: 180px;
+        background-image: linear-gradient(to right, #00bdaa 20%, #400082 80%);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .header__img {
+        width: 300px;
+        height: 90px;
+        padding-top: 30px;
+        padding-left: 30px;
+    }
+    .header__menu {
+        margin-right: 60px;
+    }
+    .header__menu ul {
+        display: none;
+        list-style: none;
+        padding: 0px;
+        position: absolute;
+        width: 150px;
+        text-align: right;
+        margin: 0px 0px 0px -14px;
+
+    }
+    .header__menu:hover ul, ul:hover {
+        display: block;
+        margin: 0px 60px 0px -14px
+    }
+    .header__menu li {
+        margin: 10px 0px;
+    }
+    .header__menu li a {
+        color: #f1e7b6;
+        text-decoration: none;
+    }
+    .header__menu li a:hover {
+        text-decoration: underline;
+    }
+    .header__menu--profile {
+        margin-right: 8px;
+        align-items: center;
+        display: flex;
+        cursor: pointer;
+    }
+    .header__menu--profile img {
+        margin-right: 8px;
+        width: 80px;
+    }
+    .header__menu--profile p {
+        color: #f1e7b6;
+        margin: 0px;
+    }
+    .main {
+        margin-top: 100px;
+        height: 400px;
+        text-align: center;
+    }
+    .main__title {
+        font-size: 25px;
+        color: #f1e7b6;
+        align-items: center;
+        text-align: center;
+    }
+    .input {
+        outline: none;
+        align-items: center;
+        border-radius: 50px;
+        background-color: rgba(255, 255, 255, 0.2);
+        border: solid 2px #f1e7b6;
+        height: 50px;
+        padding: 0px 25px;
+        width: 70%;
+        color: #f1e7b6;
+        font-size: 22px;
+        font-family: 'Mali', sans-serif;
+        text-align: left;
+    }
+    ::placeholder {
+        color: #f1e7b6;
+        font-family: 'Mali', sans-serif;
+        font-size: 22px;
+        align-items: center;
+    }
+    .carousel {
+        width: 100%;
+        overflow: scroll;
+        padding: 30px;
+        position: relative;
+    }
+    .carousel__container {
+        white-space: nowrap;
+        margin: 70px 0px;
+        padding-bottom: 10px; 
+    }
+    .carousel-item {
+        background-color: palevioletred;
+        width: 200px;
+        height: 250px;
+        border-radius: 20px;
+        overflow: hidden;
+        margin-right: 10px;
+        display: inline-block;
+        cursor: pointer;
+        transition: 450ms all;
+        transform-origin: center left;
+        position: relative;
+    }
+    .carousel-item:hover ~ .carousel-item {
+        transform: translate3d(100px, 0, 0);
+    }
+    .carousel__container:hover .carousel-item {
+        opacity: 0.3;
+    }
+    .carousel__container:hover .carousel-item:hover {
+        transform: scale(1.5);
+        opacity: 1;
+    }
+    .carousel-item__img {
+        width: 200px;
+        height: 250px;
+        object-fit: cover;
+    }
+    .carousel-item__details {
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 100%);
+        font-size: 10px;
+        opacity: 0;
+        transition: 450ms opacity;
+        padding: 10px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+
+</style>
+<body>
+    <header class="header">
+        <img class="header__img" src="https://raw.githubusercontent.com/platzi/PlatziVideo/feature/react/src/assets/static/logo-platzi-video-BW2.png" alt="">
+        <div class="header__menu">
+            <div class="header__menu--profile">
+                <img src="https://img.icons8.com/dusk/64/000000/cat-profile.png" alt="profile image"/>
+                <p>Profile</p>
+            </div>
+            <ul>
+                <li><a href="">Cuenta</a></li>
+                <li><a href="">Cerrar Sesión</a></li>
+            </ul>
+        </div>
+    </header>
+    <section class="main">
+        <h1 class="main__title">Que Quieres ver hoy?</h1>
+        <input class="input" type="text" placeholder="Buscar...">
+        <section class="carousel">
+            <div class="carousel__container">
+                <div class="carousel-item">
+                    <img class="carousel-item__img" src="https://images.pexels.com/photos/1438072/pexels-photo-1438072.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="People">
+                    <div class="carousel-item__details">
+                        <div>
+                            <img src="../icons/play-icon.png" alt="Play">
+                            <img src="../icons/plus-icon.png" alt="Plus">
+                        </div>
+                        <p class="carousel-item__details--title">Título descriptivo</p>
+                        <p class="carousel-item__details--subtitle">2019 16+ 114 minutos</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                </div>
+            </div>
+        </section>
+</body>
+</html>
